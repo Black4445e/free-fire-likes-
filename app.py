@@ -5,6 +5,7 @@ from Crypto.Util.Padding import pad
 from google.protobuf.json_format import MessageToJson
 import binascii
 import aiohttp
+from flask_cors import CORS
 import requests
 import json
 import like_pb2
@@ -13,6 +14,7 @@ import uid_generator_pb2
 from google.protobuf.message import DecodeError
 
 app = Flask(__name__)
+CORS(app)  # Habilita CORS
 
 def load_tokens(server_name):
     try:
